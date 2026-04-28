@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRON AI | Élite Performance</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <div class="container">
+        <header>
+            <h1 class="logo">IRON <span>AI</span></h1>
+            <p class="subtitle">SISTEMA AVANZADO DE ENTRENAMIENTO Y NUTRICIÓN</p>
+        </header>
+
+        <section class="glass-card">
+            <div class="grid-form">
+                <div class="input-group">
+                    <label>EDAD ACTUAL</label>
+                    <input type="number" id="age" placeholder="Años">
+                </div>
+                <div class="input-group">
+                    <label>PESO CORPORAL (KG)</label>
+                    <input type="number" id="weight" placeholder="Ej: 75">
+                </div>
+                <div class="input-group">
+                    <label>ESTATURA (CM)</label>
+                    <input type="number" id="height" placeholder="Ej: 180">
+                </div>
+                <div class="input-group">
+                    <label>DÍAS DE ENTRENAMIENTO</label>
+                    <input type="number" id="days" min="1" max="7" value="4">
+                </div>
+                <div class="input-group">
+                    <label>TIEMPO POR SESIÓN (MINUTOS)</label>
+                    <input type="number" id="sessionTime" min="30" max="180" value="60">
+                </div>
+                <div class="input-group">
+                    <label>OBJETIVO PRINCIPAL</label>
+                    <select id="goal">
+                        <option value="perder">PÉRDIDA DE GRASA</option>
+                        <option value="ganar">GANANCIA DE MASA MUSCULAR</option>
+                        <option value="fuerza">DESARROLLO DE FUERZA</option>
+                    </select>
+                </div>
+                <div class="input-group full-width">
+                    <label>ALIMENTOS PREFERIDOS (MÍNIMO 3)</label>
+                    <input type="text" id="favFoods" placeholder="Ej: Pollo, Salmón, Arroz, Avena, Huevos, Aguacate, Banano">
+                </div>
+            </div>
+            <button onclick="generateElitePlan()" class="btn-glow">GENERAR PLAN MAESTRO</button>
+        </section>
+
+        <section id="result" class="result-section hidden">
+            <div id="imcDisplay" class="info-badge"></div>
+            <div id="macroBoard" class="macro-grid"></div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('routine')">RUTINA DE ENTRENAMIENTO</button>
+                <button class="tab-btn" onclick="showTab('diet')">PLAN DE NUTRICIÓN SEMANAL</button>
+            </div>
+
+            <div id="routineContent" class="tab-content"></div>
+            <div id="dietContent" class="tab-content hidden"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
