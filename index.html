@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IRON AI | Élite Performance</title>
+    <title>IRON AI | Élite v6.0</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
@@ -12,17 +12,17 @@
     <div class="container">
         <header>
             <h1 class="logo">IRON <span>AI</span></h1>
-            <p class="subtitle">SISTEMA AVANZADO DE ENTRENAMIENTO Y NUTRICIÓN</p>
+            <p class="subtitle">ALGORITMO DE ENTRENAMIENTO CORREGIDO</p>
         </header>
 
         <section class="glass-card">
             <div class="grid-form">
                 <div class="input-group">
-                    <label>EDAD ACTUAL</label>
+                    <label>EDAD</label>
                     <input type="number" id="age" placeholder="Años">
                 </div>
                 <div class="input-group">
-                    <label>PESO CORPORAL (KG)</label>
+                    <label>PESO (KG)</label>
                     <input type="number" id="weight" placeholder="Ej: 75">
                 </div>
                 <div class="input-group">
@@ -30,27 +30,34 @@
                     <input type="number" id="height" placeholder="Ej: 180">
                 </div>
                 <div class="input-group">
-                    <label>DÍAS DE ENTRENAMIENTO</label>
-                    <input type="number" id="days" min="1" max="7" value="4">
+                    <label>DÍAS POR SEMANA</label>
+                    <input type="number" id="days" min="1" max="7" value="3">
                 </div>
                 <div class="input-group">
-                    <label>TIEMPO POR SESIÓN (MINUTOS)</label>
+                    <label>MINUTOS POR SESIÓN</label>
                     <input type="number" id="sessionTime" min="30" max="180" value="60">
                 </div>
                 <div class="input-group">
-                    <label>OBJETIVO PRINCIPAL</label>
-                    <select id="goal">
-                        <option value="perder">PÉRDIDA DE GRASA</option>
-                        <option value="ganar">GANANCIA DE MASA MUSCULAR</option>
-                        <option value="fuerza">DESARROLLO DE FUERZA</option>
+                    <label>METODOLOGÍA</label>
+                    <select id="intensityType">
+                        <option value="fallo">AL FALLO MUSCULAR</option>
+                        <option value="rango">RANGO DE REPETICIONES</option>
                     </select>
                 </div>
                 <div class="input-group full-width">
-                    <label>ALIMENTOS PREFERIDOS (MÍNIMO 3)</label>
-                    <input type="text" id="favFoods" placeholder="Ej: Pollo, Salmón, Arroz, Avena, Huevos, Aguacate, Banano">
+                    <label>OBJETIVO</label>
+                    <select id="goal">
+                        <option value="perder">PÉRDIDA DE GRASA</option>
+                        <option value="ganar">GANANCIA DE MASA MUSCULAR</option>
+                        <option value="fuerza">AUMENTO DE FUERZA</option>
+                    </select>
+                </div>
+                <div class="input-group full-width">
+                    <label>ALIMENTOS PREFERIDOS</label>
+                    <input type="text" id="favFoods" placeholder="Ej: Pollo, Pasta, Brócoli...">
                 </div>
             </div>
-            <button onclick="generateElitePlan()" class="btn-glow">GENERAR PLAN MAESTRO</button>
+            <button onclick="generateElitePlan()" class="btn-glow">REGENERAR PLAN MAESTRO</button>
         </section>
 
         <section id="result" class="result-section hidden">
@@ -58,8 +65,8 @@
             <div id="macroBoard" class="macro-grid"></div>
             
             <div class="tabs">
-                <button class="tab-btn active" onclick="showTab('routine')">RUTINA DE ENTRENAMIENTO</button>
-                <button class="tab-btn" onclick="showTab('diet')">PLAN DE NUTRICIÓN SEMANAL</button>
+                <button class="tab-btn active" onclick="showTab('routine')">ENTRENAMIENTO</button>
+                <button class="tab-btn" onclick="showTab('diet')">DIETA SEMANAL</button>
             </div>
 
             <div id="routineContent" class="tab-content"></div>
